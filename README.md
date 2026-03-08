@@ -1,16 +1,74 @@
-# React + Vite
+# Color Harmony
+Minimal web app to generate beautiful **color harmony palettes** from any color.  
+No signup.  
+No API.  
+Just clean palettes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## Live Demo
+[https://colorsharmony.netlify.app/#6366f1]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Features
+- Pick a base color with an interactive **color wheel**
+- Enter any **HEX** value (auto-updates on valid input)
+- **Eyedropper** support (pick color from screen, supported browsers)
+- Generate harmony sets instantly:
+  - **Complementary** (180° opposite)
+  - **Analogous** (±30° adjacent)
+  - **Triadic** (120° spacing)
+  - **Split Complementary** (150° & 210°)
+  - **Square** (90° spacing)
+  - **Tetradic** (double complement)
+  - **Monochromatic** (light/dark variants)
+- Click any swatch to **copy HEX** (with “Copied!” feedback)
+- Copy quick values:
+  - **HEX / RGB / HSL** buttons (one-tap copy)
+- **Shareable URLs**: color is stored in the URL hash (`/#6366f1`)
+- **Recent colors** history (auto updates as you pick)
+- **Favorites** saved to localStorage (quick access)
+- Clean, responsive, Apple-inspired UI
+- No authentication
+- No ads
+- No watermarks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
+- React (Vite)
+- Canvas API (custom color wheel rendering)
+- Vanilla CSS (Apple-inspired UI)
+- Utility color functions (HSL/HEX conversions, contrast, WCAG rating, etc.)
+- Vercel (static deploy)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## How It Works
+1. Pick a color from the **wheel** (canvas-based) or paste a **HEX**
+2. App calculates color harmonies by shifting **hue** in HSL space
+3. Each harmony card renders swatches you can **copy** instantly
+4. The selected color syncs to the URL hash so you can **share** the exact palette
+
+> Everything is computed client-side. Nothing is uploaded.
+
+---
+
+## Privacy
+All processing happens **locally in your browser**.  
+No data is sent to any server.
+
+---
+
+## Installation
+```bash
+# Clone the repo
+git clone <YOUR_REPO_URL>
+
+# Install dependencies
+cd <YOUR_PROJECT_FOLDER>
+npm install
+
+# Run locally
+npm run dev
