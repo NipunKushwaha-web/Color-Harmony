@@ -4,10 +4,12 @@ No signup.
 No API.  
 Just clean palettes.
 
+<img width="1897" height="976" alt="image" src="https://github.com/user-attachments/assets/9c1aa8ee-43c2-44d4-8978-88552dec5f40" />
+
 ---
 
 ## Live Demo
-[https://colorsharmony.netlify.app/#6366f1]
+https://colorsharmony.netlify.app/#6366f1
 
 ---
 
